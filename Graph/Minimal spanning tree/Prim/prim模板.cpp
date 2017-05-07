@@ -1,14 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int maxn = 1e3;
+
+//确定数据结构  图 vis  到集合的最短长度
 int G[maxn][maxn];
 int vis[maxn] , d[maxn] , p[maxn];
-const int inf = 1 << 21;
+
+//inf设为0x3f3f3f = 1061109567
+const int inf = 0x3f3f3f3f;
+
 int m,n,ans,tail;
 int f(int s){
     for(int i = 1 ; i <= m ; i++)
         if(p[i] == s) return i;
 }
+
+//每次选取最短的点进入集合
 void prim(){
     d[1] = 0;
     while(1){
@@ -35,18 +42,16 @@ void prim(){
         }
     }
 }
+
 int main()
 {
-    while(cin >> m >> n){
-        for(int i = 0 ; i < maxn ; i++){
-            vis[i] = 0;
-            d[i] = inf;
-            p[i] = -1;
-        }
-
-        for(int i = 0  ; i <= m ; i++)
-            for(int j = 0 ; j <= m ; j++)
-                G[i][j]= inf;
+    
+        memset(vis , 0 , sizeof(vis));
+        memset(G , inf , sizeof(G));
+        memset(d , inf , sizeof(d));
+        memset(p , -1 , sizeof(p));
+    
+    
         int a , b, dist;
         for(int i = 0 ; i < n ; i++){
             cin >> a >> b >> dist ;
