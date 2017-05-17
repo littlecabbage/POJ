@@ -33,8 +33,7 @@ void prim(){
         ans += d[u];
         tail = u;
 
-        for(int i = 1 ; i <= m ;i ++)
-        for(int j = 1 ; j <= m ; j++){
+        for(int i = 1 ; i <= m ;i ++){
             if(G[u][i] < d[i] && !vis[i] && G[u][i] != inf){
                 d[i] = G[u][i];
                 p[i] = u;
