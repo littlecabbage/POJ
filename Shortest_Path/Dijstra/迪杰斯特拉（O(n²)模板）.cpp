@@ -1,7 +1,11 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <iostream>
+#include <cstring>
+//路径
+#include <stack>
 using namespace std;
 const int maxn = 1000;
-const int inf = 0x3f3f3f3f;
+const int inf = 0x3f3f3f3f;//如果是double就会出错…
 
 int vis[maxn];
 int G[maxn][maxn];
@@ -84,3 +88,4 @@ int main()
     }
     return 0;
 }
+
