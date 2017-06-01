@@ -56,7 +56,7 @@ int main()
 {
         cin >> n ;
         int x , y , dist;
-        init();
+        init();//切记初始化 ，每次没有初始化 都直接用的是d[i] = 0
         while(cin >> x >> y >> dist){
             if(x == -1 && y == -1 && dist == -1) break;
             E t;
